@@ -17,18 +17,20 @@ namespace BowlingKata.Specification
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GameScore")]
-    public partial class GameScoreFeature
+    public partial class GameScoreFeature : Xunit.IClassFixture<GameScoreFeature.FixtureData>, System.IDisposable
     {
         
-        private TechTalk.SpecFlow.ITestRunner testRunner;
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
         
 #line 1 "GameScore.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public GameScoreFeature()
+        {
+            this.TestInitialize();
+        }
+        
+        public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GameScore", "\tIn order to know how well I am doing\r\n\tAs a player\r\n\tI want to be told the curre" +
@@ -36,19 +38,16 @@ namespace BowlingKata.Specification
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -64,9 +63,19 @@ namespace BowlingKata.Specification
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Every ball is a gutter ball")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void SetFixture(GameScoreFeature.FixtureData fixtureData)
+        {
+        }
+        
+        void System.IDisposable.Dispose()
+        {
+            this.ScenarioTearDown();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Every ball is a gutter ball")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "Every ball is a gutter ball")]
+        [Xunit.TraitAttribute("Category", "mytag")]
         public virtual void EveryBallIsAGutterBall()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Every ball is a gutter ball", new string[] {
@@ -83,8 +92,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Every ball knocks down 1 pin")]
+        [Xunit.FactAttribute(DisplayName="Every ball knocks down 1 pin")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "Every ball knocks down 1 pin")]
         public virtual void EveryBallKnocksDown1Pin()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Every ball knocks down 1 pin", ((string[])(null)));
@@ -100,8 +110,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Every ball knocks down 2 pins")]
+        [Xunit.FactAttribute(DisplayName="Every ball knocks down 2 pins")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "Every ball knocks down 2 pins")]
         public virtual void EveryBallKnocksDown2Pins()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Every ball knocks down 2 pins", ((string[])(null)));
@@ -117,8 +128,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("One strike followed by remaing balls knocking down 1 pin")]
+        [Xunit.FactAttribute(DisplayName="One strike followed by remaing balls knocking down 1 pin")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "One strike followed by remaing balls knocking down 1 pin")]
         public virtual void OneStrikeFollowedByRemaingBallsKnockingDown1Pin()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One strike followed by remaing balls knocking down 1 pin", ((string[])(null)));
@@ -136,8 +148,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Every ball is a strike")]
+        [Xunit.FactAttribute(DisplayName="Every ball is a strike")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "Every ball is a strike")]
         public virtual void EveryBallIsAStrike()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Every ball is a strike", ((string[])(null)));
@@ -153,8 +166,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A strike is 10 points plus the value of the next 2 balls")]
+        [Xunit.FactAttribute(DisplayName="A strike is 10 points plus the value of the next 2 balls")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "A strike is 10 points plus the value of the next 2 balls")]
         public virtual void AStrikeIs10PointsPlusTheValueOfTheNext2Balls()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A strike is 10 points plus the value of the next 2 balls", ((string[])(null)));
@@ -174,8 +188,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A strike does not count before next two balls are known")]
+        [Xunit.FactAttribute(DisplayName="A strike does not count before next two balls are known")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "A strike does not count before next two balls are known")]
         public virtual void AStrikeDoesNotCountBeforeNextTwoBallsAreKnown()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A strike does not count before next two balls are known", ((string[])(null)));
@@ -193,8 +208,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A spare adds the value of the next ball to the roll")]
+        [Xunit.FactAttribute(DisplayName="A spare adds the value of the next ball to the roll")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "A spare adds the value of the next ball to the roll")]
         public virtual void ASpareAddsTheValueOfTheNextBallToTheRoll()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A spare adds the value of the next ball to the roll", ((string[])(null)));
@@ -216,8 +232,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("A spare does not count before next ball is known")]
+        [Xunit.FactAttribute(DisplayName="A spare does not count before next ball is known")]
+        [Xunit.TraitAttribute("FeatureTitle", "GameScore")]
+        [Xunit.TraitAttribute("Description", "A spare does not count before next ball is known")]
         public virtual void ASpareDoesNotCountBeforeNextBallIsKnown()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A spare does not count before next ball is known", ((string[])(null)));
@@ -233,6 +250,22 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("my score should be 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.1.0.0")]
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        public class FixtureData : System.IDisposable
+        {
+            
+            public FixtureData()
+            {
+                GameScoreFeature.FeatureSetup();
+            }
+            
+            void System.IDisposable.Dispose()
+            {
+                GameScoreFeature.FeatureTearDown();
+            }
         }
     }
 }
